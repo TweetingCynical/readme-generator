@@ -35,6 +35,23 @@ const questions = [
       );
     },
   },
+  {
+    type: "input",
+    name: "description",
+    message: "Give an short description of your project...",
+  },
+  {
+    type: "input",
+    name: "repo",
+    message:
+      "What is the exact spelling of your repo? Note: We will use this to generate a Live Deployment and Respository link on your Readme.",
+  },
+  {
+    type: "confirm",
+    name: "screenshot",
+    message:
+      "Do you want to include a screenshot at in this location './Assets/screenshot.png'?",
+  },
 ];
 
 // function to write README file

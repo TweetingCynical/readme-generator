@@ -2,7 +2,7 @@
   
 ![GitHub License](https://img.shields.io/badge/license-MIT-green.svg)
   
-## A simple command line application for generating a readme markdown file from user input facilited by the Inquirer package.
+## A simple command line application for generating a readme markdown file from user input facilited by the Inquirer package
   
 <!-- TABLE OF CONTENTS -->
   <details>

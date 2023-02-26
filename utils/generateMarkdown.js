@@ -208,7 +208,7 @@ function getLicenseText(license, github) {
 
 function setScreenshot(screenshot, location) {
   if (screenshot) {
-    return `\n### Screenshot\n\nWorking version of the site should look like this at standard screen size:\n<img src="${location}" alt="Working version of project" style="max-width: 400px;">`;
+    return `### Screenshot\n\nWorking version of the site should look like this at standard screen size:\n<img src="${location}" alt="Working version of project" style="max-width: 400px;">`;
   }
   return "";
 }
@@ -228,8 +228,6 @@ function generateMarkdown(data) {
           <li><a href="#usage">Usage</a></li>
           <li><a href="#credits">Credits</a></li>
           <li><a href="#installation">Installation</a></li>
-          <li><a href="#pseudocode">Pseudocode</a></li>
-          <li><a href="#overview-of-build">Overview of Build</a></li>
           <li><a href="#suggested-future-changes">Suggested Future Changes</a></li>
           <li><a href="#questions">Questions</a></li>
           <li><a href="#contributions">Contributions</a></li>
@@ -243,8 +241,11 @@ function generateMarkdown(data) {
   \n### Deployment / Code Repository
   \n[Live Deployment](https://${data.github}.github.io/${data.repo}/)
   \n[Resository](https://github.com/${data.github}/${data.repo})
-  ${setScreenshot(data.screenshot, data.screenshotLocation)}
-
+  \n${setScreenshot(data.screenshot, data.screenshotLocation)}
+  \n### Scope and Purpose
+  \n${scope}
+  \n### Suggested Future Changes
+  \n${data.future}
   \n### License
   \n${getLicenseText(data.license, data.github)}
 

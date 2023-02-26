@@ -72,6 +72,23 @@ const questions = [
     default: "./Assets/screenshot.png",
     when: (response) => response.screenshot,
   },
+  {
+    type: "input",
+    name: "scope",
+    message: "What is the Scope and Purpose of the project?",
+    default:
+      "Build an interactive command line app which collects details from a user in order to build a personalised README.md file. The user should be able to make some choices over whether to include some of the elememts, and also be able to control whether or not there are multiple lines used in some of the answers. The app will automatically generate the content, and store it as a named file within the generated-files folder of the repo.",
+  },
+  {
+    type: "input",
+    name: "future",
+    message:
+      "Enter the items for Suggested Future Changes section (use ± to indicate a new line):",
+    filter: function (response) {
+      // Replace ± with newline character
+      return response.replace(/±/g, "\n");
+    },
+  },
 ];
 
 // function to write README file

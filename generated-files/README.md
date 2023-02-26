@@ -15,8 +15,6 @@
           <li><a href="#usage">Usage</a></li>
           <li><a href="#credits">Credits</a></li>
           <li><a href="#installation">Installation</a></li>
-          <li><a href="#pseudocode">Pseudocode</a></li>
-          <li><a href="#overview-of-build">Overview of Build</a></li>
           <li><a href="#suggested-future-changes">Suggested Future Changes</a></li>
           <li><a href="#questions">Questions</a></li>
           <li><a href="#contributions">Contributions</a></li>
@@ -39,6 +37,10 @@
 
 Working version of the site should look like this at standard screen size:
 <img src="./Assets/screenshot.png" alt="Working version of project" style="max-width: 400px;">
+  
+- This is a test;
+- This is a second test;
+-This is a third test
 
   
 ### License

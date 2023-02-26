@@ -143,7 +143,9 @@ const init = () => {
       `/generated-files/${response.filename}.md`,
       generateMarkdown({ ...response })
     );
-    console.log(`Readme file created!`);
+    console.log(
+      `Readme file created! Please check the generated-files folder for your newly created file.`
+    );
   });
 };
 

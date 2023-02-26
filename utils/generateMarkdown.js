@@ -188,14 +188,14 @@ permanent authorization for you to choose that version for the
 Library.`;
 
 // function to generate markdown for README
-function getLicenceBadge(license) {
+const getLicenceBadge = (license) => {
   if (license !== "None") {
     return `![GitHub License](https://img.shields.io/badge/license-${license}-green.svg)`;
   }
   return "";
-}
+};
 
-function getLicenseText(license) {
+const getLicenseText = (license) => {
   if (license !== "None") {
     if (license === "MIT") {
       return MIT;
@@ -204,23 +204,23 @@ function getLicenseText(license) {
     }
   }
   return "";
-}
+};
 
-function setScreenshot(screenshot, location) {
+const setScreenshot = (screenshot, location) => {
   if (screenshot) {
     return `### Screenshot\n\nWorking version of the app should look like this:\n<img src="${location}" alt="Working version of project" style="max-width: 800px;">`;
   }
   return "";
-}
+};
 
-function setCredits(owner, credit, contributor) {
+const setCredits = (owner, credit, contributor) => {
   if (credit) {
     return `The following people have contributed to this app:\n- [${owner}](https://github.com/${owner})\n- [${contributor}](https://github.com/${contributor})`;
   }
   return `The following people have contributed to this app:\n- [${owner}](https://github.com/${owner})`;
-}
+};
 
-function generateMarkdown(data) {
+const generateMarkdown = (data) => {
   return `# ${data.title}
   \n${getLicenceBadge(data.license)}
   \n## ${data.description}
@@ -275,6 +275,6 @@ function generateMarkdown(data) {
   \n### License
   \n${getLicenseText(data.license)}
 `;
-}
+};
 
 module.exports = generateMarkdown;

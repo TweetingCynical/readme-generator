@@ -208,7 +208,7 @@ function getLicenseText(license) {
 
 function setScreenshot(screenshot, location) {
   if (screenshot) {
-    return `### Screenshot\n\nWorking version of the site should look like this at standard screen size:\n<img src="${location}" alt="Working version of project" style="max-width: 800px;">`;
+    return `### Screenshot\n\nWorking version of the app should look like this:\n<img src="${location}" alt="Working version of project" style="max-width: 800px;">`;
   }
   return "";
 }

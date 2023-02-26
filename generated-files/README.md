@@ -35,7 +35,7 @@
 
 ### Screenshot
 
-Working version of the site should look like this at standard screen size:
+Working version of the app should look like this:
 <img src="../assets/screenshot.png" alt="Working version of project" style="max-width: 800px;">
 
 ### Scope and Purpose
@@ -85,6 +85,7 @@ npm test
 - ✅ ~~Allow users to add multilines to their suggested future changes by including a delimeter (±);~~
 - Allow users to add more than one contributor;
 - Allow users to add code snippets to a new section named Overview of Build;
+- Add other options for Licenses;
 
 ### License
 

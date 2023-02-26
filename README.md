@@ -85,6 +85,7 @@ npm test
 - ✅ ~~Allow users to add multilines to their suggested future changes by including a delimeter (±);~~
 - Allow users to add more than one contributor;
 - Allow users to add code snippets to a new section named Overview of Build;
+- Add other options for Licenses;
 
 ### License
 

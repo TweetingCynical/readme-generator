@@ -8,14 +8,16 @@ function getLicenceBadge(license) {
 
 function setScreenshot(screenshot) {
   if (screenshot) {
-    return `## Screenshot \n \n Working version of the site should look like this at standard screen size:
-    <img src="./assets/screenshot.png" alt="Working version of project" style="max-width: 400px;">`;
+    return `\n### Screenshot\n\nWorking version of the site should look like this at standard screen size:\n<img src="./assets/screenshot.png" alt="Working version of project" style="max-width: 400px;">`;
   }
   return "";
 }
 
 function generateMarkdown(data) {
   return `# ${data.title}
+  \n### Deployment / Code Repository:
+  \n[Live Deployment](https://${data.github}.github.io/${data.repo}/)
+  \n[Resository](https://github.com/${data.github}/${data.repo})
   ${getLicenceBadge(data.license)}
   ${setScreenshot(data.screenshot)}
 `;

@@ -38,10 +38,26 @@
 Working version of the site should look like this at standard screen size:
 <img src="./Assets/screenshot.png" alt="Working version of project" style="max-width: 400px;">
   
-- This is a test;
-- This is a second test;
--This is a third test
-
+### Scope and Purpose
+  
+Build an interactive command line app which collects details from a user in order to build a personalised README.md file. The user should be able to make some choices over whether to include some of the elememts, and also be able to control whether or not there are multiple lines used in some of the answers. The app will automatically generate the content, and store it as a named file within the generated-files folder of the repo.
+  
+### Usage
+  
+### Credits
+  
+The following people have contributed to this app:
+    
+- [TweetingCynical](https://github.com/TweetingCynical)
+    - [maclauren](https://github.com/maclauren)
+  
+### Installation
+  
+### Suggested Future Changes
+  
+- This is the first test;
+- This is the second test;
+- This is the third test;
   
 ### License
   

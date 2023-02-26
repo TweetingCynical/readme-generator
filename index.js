@@ -80,10 +80,24 @@ const questions = [
       "Build an interactive command line app which collects details from a user in order to build a personalised README.md file. The user should be able to make some choices over whether to include some of the elememts, and also be able to control whether or not there are multiple lines used in some of the answers. The app will automatically generate the content, and store it as a named file within the generated-files folder of the repo.",
   },
   {
+    type: "confirm",
+    name: "contribution",
+    message:
+      "Do you want to include another GitHub user to credit their contribution?",
+    default: false,
+  },
+  {
+    type: "input",
+    name: "contributor",
+    message: "What is the GitHub username of the contributor?",
+    when: (response) => response.contribution,
+  },
+  {
     type: "input",
     name: "future",
     message:
       "Enter the items for Suggested Future Changes section (use ± to indicate a new line):",
+    default: `- This is the first test;±- This is the second test;±- This is the third test;`,
     filter: function (response) {
       // Replace ± with newline character
       return response.replace(/±/g, "\n");

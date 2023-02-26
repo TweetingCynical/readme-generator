@@ -213,6 +213,13 @@ function setScreenshot(screenshot, location) {
   return "";
 }
 
+function setCredits(owner, contribution, contributor) {
+  if (contribution) {
+    return `The following people have contributed to this app:\n- [${owner}](https://github.com/${owner})\n- [${contributor}](https://github.com/${contributor})`;
+  }
+  return `The following people have contributed to this app:\n- [${owner}](https://github.com/${owner})`;
+}
+
 function generateMarkdown(data) {
   return `# ${data.title}
   \n${getLicenceBadge(data.license)}
@@ -243,7 +250,11 @@ function generateMarkdown(data) {
   \n[Resository](https://github.com/${data.github}/${data.repo})
   \n${setScreenshot(data.screenshot, data.screenshotLocation)}
   \n### Scope and Purpose
-  \n${scope}
+  \n${data.scope}
+  \n### Usage
+  \n### Credits
+  \n${setCredits(data.github, data.contribution, data.contributor)}
+  \n### Installation
   \n### Suggested Future Changes
   \n${data.future}
   \n### License

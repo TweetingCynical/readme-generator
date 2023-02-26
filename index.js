@@ -7,6 +7,12 @@ const generateMarkdown = require("./utils/generateMarkdown");
 const questions = [
   {
     type: "input",
+    name: "filename",
+    message: "What do you want to name your readme file?",
+    default: "README",
+  },
+  {
+    type: "input",
     name: "title",
     message: "What is the title of your project?",
     default: "README Generator",
@@ -77,7 +83,10 @@ function writeToFile(fileName, data) {
 function init() {
   inquirer.prompt(questions).then((response) => {
     console.log(`Creating your personalised readme file...`);
-    writeToFile("README.md", generateMarkdown({ ...response }));
+    writeToFile(
+      `/generated-files/${response.filename}.md`,
+      generateMarkdown({ ...response })
+    );
     console.log(`Readme file created!`);
   });
 }

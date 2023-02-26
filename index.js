@@ -49,8 +49,15 @@ const questions = [
   {
     type: "confirm",
     name: "screenshot",
-    message:
-      "Do you want to include a screenshot at in this location './Assets/screenshot.png'?",
+    message: "Do you want to include a screenshot?",
+    default: true,
+  },
+  {
+    type: "input",
+    name: "screenshotLocation",
+    message: "What is the location of your screenshot?",
+    default: "./Assets/screenshot.png",
+    when: (response) => response.screenshot,
   },
 ];
 
@@ -62,8 +69,8 @@ function writeToFile(fileName, data) {
 // function to initialize program
 function init() {
   inquirer.prompt(questions).then((response) => {
-    console.log(`Now creating your personalised Readme file...`);
     writeToFile("README.md", generateMarkdown({ ...response }));
+    console.log(`Readme file created...`);
   });
 }
 

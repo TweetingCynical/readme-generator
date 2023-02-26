@@ -2,7 +2,7 @@
   
 ![GitHub License](https://img.shields.io/badge/license-MIT-green.svg)
   
-## Test
+## A simple command line application for generating a readme markdown file from user input facilited by the Inquirer package.
   
 <!-- TABLE OF CONTENTS -->
   <details>
@@ -38,12 +38,11 @@
 ### Screenshot
 
 Working version of the site should look like this at standard screen size:
-<img src="./assets/screenshot.png" alt="Working version of project" style="max-width: 400px;">
+<img src="./Assets/screenshot.png" alt="Working version of project" style="max-width: 400px;">
 
   
 ### License
   
-
 MIT License
 
 Copyright (c)

@@ -1,5 +1,5 @@
 // License Text for MIT and GPL
-const MIT = `\nMIT License
+const MIT = `MIT License
 
 Copyright (c)
 
@@ -21,7 +21,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.`;
 
-const GPL = `\nGNU LESSER GENERAL PUBLIC LICENSE
+const GPL = `GNU LESSER GENERAL PUBLIC LICENSE
 Version 3, 29 June 2007
 
 Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>
@@ -206,9 +206,9 @@ function getLicenseText(license, github) {
   return "";
 }
 
-function setScreenshot(screenshot) {
+function setScreenshot(screenshot, location) {
   if (screenshot) {
-    return `\n### Screenshot\n\nWorking version of the site should look like this at standard screen size:\n<img src="./assets/screenshot.png" alt="Working version of project" style="max-width: 400px;">`;
+    return `\n### Screenshot\n\nWorking version of the site should look like this at standard screen size:\n<img src="${location}" alt="Working version of project" style="max-width: 400px;">`;
   }
   return "";
 }
@@ -243,7 +243,7 @@ function generateMarkdown(data) {
   \n### Deployment / Code Repository
   \n[Live Deployment](https://${data.github}.github.io/${data.repo}/)
   \n[Resository](https://github.com/${data.github}/${data.repo})
-  ${setScreenshot(data.screenshot)}
+  ${setScreenshot(data.screenshot, data.screenshotLocation)}
 
   \n### License
   \n${getLicenseText(data.license, data.github)}

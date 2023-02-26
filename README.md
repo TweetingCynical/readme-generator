@@ -35,7 +35,7 @@
 
 ### Screenshot
 
-Working version of the site should look like this at standard screen size:
+Working version of the site should look like this:
 <img src="./assets/screenshot.png" alt="Working version of project" style="max-width: 800px;">
 
 ### Scope and Purpose

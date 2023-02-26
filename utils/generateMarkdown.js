@@ -195,7 +195,7 @@ function getLicenceBadge(license) {
   return "";
 }
 
-function getLicenseText(license, github) {
+function getLicenseText(license) {
   if (license !== "None") {
     if (license === "MIT") {
       return MIT;
@@ -208,13 +208,13 @@ function getLicenseText(license, github) {
 
 function setScreenshot(screenshot, location) {
   if (screenshot) {
-    return `### Screenshot\n\nWorking version of the site should look like this at standard screen size:\n<img src="${location}" alt="Working version of project" style="max-width: 400px;">`;
+    return `### Screenshot\n\nWorking version of the site should look like this at standard screen size:\n<img src="${location}" alt="Working version of project" style="max-width: 800px;">`;
   }
   return "";
 }
 
-function setCredits(owner, contribution, contributor) {
-  if (contribution) {
+function setCredits(owner, credit, contributor) {
+  if (credit) {
     return `The following people have contributed to this app:\n- [${owner}](https://github.com/${owner})\n- [${contributor}](https://github.com/${contributor})`;
   }
   return `The following people have contributed to this app:\n- [${owner}](https://github.com/${owner})`;
@@ -235,10 +235,10 @@ function generateMarkdown(data) {
           <li><a href="#usage">Usage</a></li>
           <li><a href="#credits">Credits</a></li>
           <li><a href="#installation">Installation</a></li>
-          <li><a href="#suggested-future-changes">Suggested Future Changes</a></li>
           <li><a href="#questions">Questions</a></li>
           <li><a href="#contributions">Contributions</a></li>
           <li><a href="#tests">Tests</a></li>
+          <li><a href="#suggested-future-changes">Suggested Future Changes</a></li>
           <li><a href="#license">License</a></li>
         </ol>
   </details>
@@ -247,20 +247,33 @@ function generateMarkdown(data) {
   \n## About the Project
   \n### Deployment / Code Repository
   \n[Live Deployment](https://${data.github}.github.io/${data.repo}/)
-  \n[Resository](https://github.com/${data.github}/${data.repo})
+  \n[Repository](https://github.com/${data.github}/${data.repo})
   \n${setScreenshot(data.screenshot, data.screenshotLocation)}
   \n### Scope and Purpose
   \n${data.scope}
   \n### Usage
+  \n${data.usage}
   \n### Credits
-  \n${setCredits(data.github, data.contribution, data.contributor)}
+  \n${setCredits(data.github, data.credit, data.contributor)}
   \n### Installation
+  \nTo install the necessary tendencies, you must run the following command:
+  \n\`\`\`\n${data.installation}\n\`\`\`
+  \n### Questions
+  \nIf you have any questions or to report bugs, please [open a new issue](https://github.com/${
+    data.github
+  }/${data.repo}/issues/new) or [email us](mailto:${data.email}?subject=${
+    data.repo
+  })
+  \nYou can find more of my work at https://github.com/${data.github}
+  \n### Contributing
+  \n${data.contributing}
+  \n### Tests
+  \nTo run tests, run the following command:
+  \n\`\`\`\n${data.tests}\n\`\`\`
   \n### Suggested Future Changes
   \n${data.future}
   \n### License
-  \n${getLicenseText(data.license, data.github)}
-
-
+  \n${getLicenseText(data.license)}
 `;
 }
 

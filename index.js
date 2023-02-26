@@ -38,7 +38,7 @@ const questions = [
     // Add a validation check to email address input
     // Used with permission from Stack Overflow:
     // https://stackoverflow.com/questions/65189877/how-can-i-validate-that-a-user-input-their-email-when-using-inquirer-npm
-    validate: function (email) {
+    validate: (email) => {
       // Regex mail check (return true if valid mail)
       return /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()\.,;\s@\"]+\.{0,1})+([^<>()\.,;:\s@\"]{2,}|[\d\.]+))$/.test(
         email
@@ -69,7 +69,7 @@ const questions = [
     type: "input",
     name: "screenshotLocation",
     message: "What is the location of your screenshot?",
-    default: "./Assets/screenshot.png",
+    default: "../assets/screenshot.png",
     when: (response) => response.screenshot,
   },
   {
@@ -77,11 +77,18 @@ const questions = [
     name: "scope",
     message: "What is the Scope and Purpose of the project?",
     default:
-      "Build an interactive command line app which collects details from a user in order to build a personalised README.md file. The user should be able to make some choices over whether to include some of the elememts, and also be able to control whether or not there are multiple lines used in some of the answers. The app will automatically generate the content, and store it as a named file within the generated-files folder of the repo.",
+      "Build an interactive command line app which collects details from a user in order to build a personalised README file. The user should be able to make some choices over whether to include some of the elememts, and also be able to control whether or not there are multiple lines used in some of the answers. The app will automatically generate the content, and store it as a named file within the generated-files folder of the repo.",
+  },
+  {
+    type: "input",
+    name: "usage",
+    message: "What does the user need to know about using your repo?",
+    default:
+      "This site and its contents are for educational purposes only. You should have Node.js installed to be able to run this program.",
   },
   {
     type: "confirm",
-    name: "contribution",
+    name: "credit",
     message:
       "Do you want to include another GitHub user to credit their contribution?",
     default: false,
@@ -90,7 +97,25 @@ const questions = [
     type: "input",
     name: "contributor",
     message: "What is the GitHub username of the contributor?",
-    when: (response) => response.contribution,
+    when: (response) => response.credit,
+  },
+  {
+    type: "input",
+    name: "installation",
+    message: "What command should the user run to install dependencies?",
+    default: "npm i",
+  },
+  {
+    type: "input",
+    name: "contributing",
+    message: "How does the user contribute to the repo?",
+    default: "Please create a fork to contribute to our project.",
+  },
+  {
+    type: "input",
+    name: "tests",
+    message: "What command should the user run to run tests?",
+    default: "npm test",
   },
   {
     type: "input",
@@ -98,7 +123,7 @@ const questions = [
     message:
       "Enter the items for Suggested Future Changes section (use ± to indicate a new line):",
     default: `- This is the first test;±- This is the second test;±- This is the third test;`,
-    filter: function (response) {
+    filter: (response) => {
       // Replace ± with newline character
       return response.replace(/±/g, "\n");
     },
@@ -106,12 +131,12 @@ const questions = [
 ];
 
 // function to write README file
-function writeToFile(fileName, data) {
+const writeToFile = (fileName, data) => {
   return fs.writeFileSync(path.join(process.cwd(), fileName), data);
-}
+};
 
-// function to initialize program
-function init() {
+// Use ES6 to create init function
+const init = () => {
   inquirer.prompt(questions).then((response) => {
     console.log(`Creating your personalised readme file...`);
     writeToFile(
@@ -120,7 +145,7 @@ function init() {
     );
     console.log(`Readme file created!`);
   });
-}
+};
 
 // function call to initialize program
 init();

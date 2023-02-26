@@ -187,7 +187,7 @@ apply, that proxy's public statement of acceptance of any version is
 permanent authorization for you to choose that version for the
 Library.`;
 
-// function to generate markdown for README
+// Create the license badge from the user's choice using shields.io
 const getLicenceBadge = (license) => {
   if (license !== "None") {
     return `![GitHub License](https://img.shields.io/badge/license-${license}-green.svg)`;
@@ -195,6 +195,7 @@ const getLicenceBadge = (license) => {
   return "";
 };
 
+// Grab the license text from the stored const
 const getLicenseText = (license) => {
   if (license !== "None") {
     if (license === "MIT") {
@@ -203,9 +204,10 @@ const getLicenseText = (license) => {
       return GPL;
     }
   }
-  return "";
+  return "None";
 };
 
+// Set a screenshot section with link to screenshot if user chose to include one
 const setScreenshot = (screenshot, location) => {
   if (screenshot) {
     return `### Screenshot\n\nWorking version of the app should look like this:\n<img src="${location}" alt="Working version of project" style="max-width: 800px;">`;
@@ -213,6 +215,7 @@ const setScreenshot = (screenshot, location) => {
   return "";
 };
 
+// Set additional contributor if user chose to include one, otherwise set user as only contributor
 const setCredits = (owner, credit, contributor) => {
   if (credit) {
     return `The following people have contributed to this app:\n- [${owner}](https://github.com/${owner})\n- [${contributor}](https://github.com/${contributor})`;
@@ -220,6 +223,8 @@ const setCredits = (owner, credit, contributor) => {
   return `The following people have contributed to this app:\n- [${owner}](https://github.com/${owner})`;
 };
 
+// Function to generate markdown content
+// Note: \n elements are necessary to ensure that all elements in the markdown line up correctly on the page
 const generateMarkdown = (data) => {
   return `# ${data.title}
   \n${getLicenceBadge(data.license)}

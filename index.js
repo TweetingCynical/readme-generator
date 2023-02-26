@@ -3,7 +3,7 @@ const path = require("path");
 const inquirer = require("inquirer");
 const generateMarkdown = require("./utils/generateMarkdown");
 
-// array of questions for user
+// array of questions for user to answer using Inquirer package
 const questions = [
   {
     type: "input",
@@ -17,6 +17,8 @@ const questions = [
     message: "What is the title of your project?",
     default: "README Generator",
   },
+  // Add other licenses here at a later stage.
+  // Note, you will need to add license text to the const sections on generateMarkdown for each one added
   {
     type: "list",
     name: "license",
@@ -65,11 +67,13 @@ const questions = [
     message: "Do you want to include a screenshot?",
     default: true,
   },
+  // Optional request for screenshot location based on answer to previous question
   {
     type: "input",
     name: "screenshotLocation",
     message: "What is the location of your screenshot?",
     default: "../assets/screenshot.png",
+    // Add when option to ensure this question is optional
     when: (response) => response.screenshot,
   },
   {
@@ -93,10 +97,12 @@ const questions = [
       "Do you want to include another GitHub user to credit their contribution?",
     default: false,
   },
+  // Optional request for additional contributor based on answer to previous question
   {
     type: "input",
     name: "contributor",
     message: "What is the GitHub username of the contributor?",
+    // Add when option to ensure this question is optional
     when: (response) => response.credit,
   },
   {
@@ -123,6 +129,7 @@ const questions = [
     message:
       "Enter the items for Suggested Future Changes section (use ± to indicate a new line):",
     default: `- This is the first test;±- This is the second test;±- This is the third test;`,
+    // Add ability for user to use a delimeter (±) to indicate a new line in their code
     filter: (response) => {
       // Replace ± with newline character
       return response.replace(/±/g, "\n");

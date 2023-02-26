@@ -48,7 +48,7 @@ const questions = [
   {
     type: "input",
     name: "description",
-    message: "Give an short description of your project...",
+    message: "Give a short description of your project...",
     default:
       "A simple command line application for generating a readme markdown file from user input facilited by the Inquirer package",
   },

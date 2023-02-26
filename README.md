@@ -1,9 +1,9 @@
 # README Generator
-  
+
 ![GitHub License](https://img.shields.io/badge/license-MIT-green.svg)
-  
-## A simple command line application for generating a readme markdown file from user input facilited by the Inquirer package
-  
+
+## A simple command line application for generating a readme markdown file from user input facilited by the Inquirer package. Note: This readme file was created using this README generator.
+
 <!-- TABLE OF CONTENTS -->
   <details>
     <summary>Table of Contents</summary>
@@ -15,34 +15,79 @@
           <li><a href="#usage">Usage</a></li>
           <li><a href="#credits">Credits</a></li>
           <li><a href="#installation">Installation</a></li>
-          <li><a href="#pseudocode">Pseudocode</a></li>
-          <li><a href="#overview-of-build">Overview of Build</a></li>
-          <li><a href="#suggested-future-changes">Suggested Future Changes</a></li>
           <li><a href="#questions">Questions</a></li>
           <li><a href="#contributions">Contributions</a></li>
           <li><a href="#tests">Tests</a></li>
+          <li><a href="#suggested-future-changes">Suggested Future Changes</a></li>
           <li><a href="#license">License</a></li>
         </ol>
   </details>
 
   <!-- About the Project -->
-  
+
 ## About the Project
-  
+
 ### Deployment / Code Repository
-  
+
 [Live Deployment](https://TweetingCynical.github.io/readme-generator/)
-  
-[Resository](https://github.com/TweetingCynical/readme-generator)
-  
+
+[Repository](https://github.com/TweetingCynical/readme-generator)
+
 ### Screenshot
 
 Working version of the site should look like this at standard screen size:
-<img src="./Assets/screenshot.png" alt="Working version of project" style="max-width: 400px;">
+<img src="./assets/screenshot.png" alt="Working version of project" style="max-width: 800px;">
 
-  
+### Scope and Purpose
+
+Build an interactive command line app which collects details from a user in order to build a personalised README file. The user should be able to make some choices over whether to include some of the elememts, and also be able to control whether or not there are multiple lines used in some of the answers. The app will automatically generate the content, and store it as a named file within the generated-files folder of the repo.
+
+### Usage
+
+This site and its contents are for educational purposes only. You should have Node.js installed to be able to run this program.
+
+### Credits
+
+The following people have contributed to this app:
+
+- [TweetingCynical](https://github.com/TweetingCynical)
+
+### Installation
+
+To install the necessary tendencies, you must run the following command:
+
+```
+npm i
+```
+
+### Questions
+
+If you have any questions or to report bugs, please [open a new issue](https://github.com/TweetingCynical/readme-generator/issues/new) or [email us](mailto:jon@exce-ed.com?subject=readme-generator)
+
+You can find more of my work at [TweetingCynical](https://github.com/TweetingCynical)
+
+### Contributing
+
+Please create a fork to contribute to our project.
+
+### Tests
+
+To run tests, run the following command:
+
+```
+npm test
+```
+
+### Suggested Future Changes
+
+- ✅ ~~Allow users to choose whether to add a screenshot;~~
+- ✅ ~~Add an email validation;~~
+- ✅ ~~Allow users to add multilines to their suggested future changes by including a delimeter (±);~~
+- Allow users to add more than one contributor;
+- Allow users to add code snippets to a new section named Overview of Build;
+
 ### License
-  
+
 MIT License
 
 Copyright (c)
@@ -64,5 +109,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
-

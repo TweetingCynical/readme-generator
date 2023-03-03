@@ -33,6 +33,9 @@
 
 [Repository](https://github.com/TweetingCynical/readme-generator)
 
+[Video Walkthrough](https://drive.google.com/file/d/17XvcqDKRhH-g58sJVA9bk-Litg_0h0pE/view)
+NOTE: This video walkthrough talks through the added extras I created in this project, and also how I found solutions to some of the problems I faced. If you wish to skip this part of the walkthrough, and go straight the demonstration of my app, this can be found at the 14:45 mark of the video.
+
 ### Screenshot
 
 Working version of the app should look like this:
